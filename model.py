@@ -36,13 +36,13 @@ class textCNN(nn.Module):
     def __init__(self, vocab_built, dim_channel, kernel_wins, dropout_rate, num_class):
         super(textCNN, self).__init__()
         
-        emb_dim = len(next(iter(vocab_built.values()))) 
+        width, emb_dim = vocab_built.shape
         
-        self.embed = nn.Embedding(len(vocab_built), emb_dim, dtype=torch.float32)
+        self.embed = nn.Embedding(width, emb_dim, dtype=torch.float32)
         
         # comment to use random data in embedding layer
-        # embeddings = torch.tensor(list(vocab_built.values()), dtype=torch.float32)
-        # self.embed.weight.data.copy_(embeddings)
+        embeddings = torch.tensor(vocab_built, dtype=torch.float32)
+        self.embed.weight.data.copy_(embeddings)
         
         self.convs = nn.ModuleList([nn.Conv2d(1, dim_channel, (w, emb_dim)) for w in kernel_wins])
         

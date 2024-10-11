@@ -2,8 +2,10 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode
 
 
-/data
-
+data/
+model/
+test/
+embedding/
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
