@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode
 
 
-/date
+/data
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
