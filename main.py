@@ -23,9 +23,6 @@ def main():
     parser.add_argument('--lr', type=float, default=0.001,
                         help='learning rate (default: 0.01)')
     
-    parser.add_argument('--momentum', type=float, default=0.9,
-                        help='SGD momentum (default: 0.9)')
-    
     parser.add_argument('--batch_size', type=int, default=32,
                     help='input batch size for training (default: 64)')
     
@@ -37,6 +34,10 @@ def main():
     
     parser.add_argument('--dropout', type=float, default=0.5,
                         help='dropout rate for linear layer (default: 0.5)')
+    
+    parser.add_argument('--testdata_ratio', type=float, default=0.3,
+                        help='test data rate for all dataset (default: 0.3)')
+    
     
     #if you are using jupyternotebook with argparser
     # args = parser.parse_known_args()[0]
