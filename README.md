@@ -14,13 +14,15 @@ torchtext   0.18.0
 numpy       1.26.4
 ```
 
-### 2.Prepare dataset file
+### 2.Prepare dataset and pretrained vocaulary
 You should make your onw dataset directory in the workshop directory such ./data/dataset.csv prepare data as such format:
 
 |text|label|
 |--|--|
 |怎么分担|chat|
 |美国最近有什么新闻|news|
+
+And prepare pretrained vocabulay in directory such as ./embedding/sgns.zhihu.word, you can download chinese vocabulary in [this github repo](https://github.com/Embedding/Chinese-Word-Vectors)
 
 ### 3.Prepare your own label dict
 
@@ -46,3 +48,4 @@ python main.py --data_csv ./data/dataset.csv --epochs 10 --lr 0.01 --batch_size 
 Thanks to the information from following sources:
 - https://github.com/leohsuofnthu/Pytorch-TextCNN
 - https://github.com/delldu/TextCNN
+- https://github.com/Embedding/Chinese-Word-Vectors
