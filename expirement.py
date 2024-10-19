@@ -12,8 +12,7 @@ from sklearn.metrics import classification_report
 def train(m, device, train_loader, optimizer, epoch, max_epoch):
     corrects, train_loss = 0.0,0
     for indices, target in train_loader:
-
-        input_tensor = torch.tensor(indices, dtype=torch.long).to(device)
+        input_tensor = indices.to(device)
         
         target = target.to(device)
 
@@ -44,7 +43,7 @@ def valid(m, device, test_loader):
     corrects, test_loss = 0.0, 0
     
     for indices, target in test_loader:
-        input_tensor = torch.tensor(indices, dtype=torch.long).to(device)
+        input_tensor = indices.to(device)
         target = target.to(device)
 
         # Forward pass
